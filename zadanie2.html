@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const promien = prompt('Podaj promien');
+        const pole = Math.PI * promien * promien;
+        const obwod = 2 * Math.PI * promien; 
+
+
+        document.write('Wartość promienia wynosi: ' + promien + '<br>'); 
+        //document.write('Wartość pola wynosi: ' + pole.toFixed(2) + '<br>');
+        document.write(`Wartość pola wynosi: ${pole.toFixed(2)} <br>`);
+        document.write('Wartość obwodu wynosi: ' + obwod.toFixed(2));
+
+    </script>
+
+</body>
+</html>
