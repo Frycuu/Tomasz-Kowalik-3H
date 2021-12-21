@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+    <form action="" method="POST">
+        
+        <input type="text" name="fig" placeholder="Podaj figurę K/P/T" />
+        <input type="number" name="l1" placeholder="Podaj długość a" />
+        <input type="number" name="l2" placeholder="Podaj długość b" />
+        
+        <input type="submit" value="Sprawdź" />
+    
+    </form>
+    
+    
+    <div class="wynik"></div>
+    
+    <script>
+        
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        
+        
+        
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            
+            const fig = document.querySelector('input[name="fig"]').value.toUpperCase();
+            const a = document.querySelector('input[name="l1"]').value * 1;
+            const b = document.querySelector('input[name="l2"]').value * 1;
+            
+            
+            
+            switch (fig)
+            {
+                case "K":
+                    const pk = a*a;
+                    diw.textContent = `Pole kwadratu wynosi: ${pk}`;
+                    break;
+                
+                case "P":
+                    const pp = a*b;
+                    diw.textContent = `Pole prostokąta wynosi: ${pp}`;
+                    break;
+            
+                case "T":
+                    const pt = (a*b)/2;
+                    diw.textContent = `Pole trójkąta wynosi: ${pt}`;
+                    break;
+                
+                default:
+                    diw.textContent = `NIE MA TAKIEJ FIGURY!`;
+                    break;
+            }
+
+        });
+    
+    </script>
+
+</body>
+</html>
