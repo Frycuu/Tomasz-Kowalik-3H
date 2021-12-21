@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+    <form action="" method="POST">
+        
+        <input type="number" name="l1" placeholder="Podaj numer miesiąca" />
+        
+        <input type="submit" value="Sprawdź" />
+    
+    </form>
+    
+    
+    <div class="wynik"></div>
+    
+    <script>
+        
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        
+        
+        
+        formularz.addEventListener('submit', (e)=>{
+            e.preventDefault();
+            const l1 = document.querySelector('input[name="l1"]').value * 1;
+            
+            
+            
+            switch (l1)
+            {
+                case 1:
+                    diw.textContent = `Styczeń`;
+                    break;
+                
+                case 2:
+                    diw.textContent = `Luty`;
+                    break;
+            
+                case 3:
+                    diw.textContent = `Marzec`;
+                    break;
+        
+                case 4:
+                    diw.textContent = `Kwiecień`;
+                    break;
+    
+                case 5:
+                    diw.textContent = `Maj`;
+                    break;
+
+                case 6:
+                    diw.textContent = `Czerwiec`;
+                    break;
+                
+                case 7:
+                    diw.textContent = `Lipiec`;
+                    break;
+                
+                case 8:
+                    diw.textContent = `Sierpień`;
+                    break;
+               
+                case 9:
+                    diw.textContent = `Wrzesień`;
+                    break;
+               
+                case 10:
+                    diw.textContent = `Październik`;
+                    break;
+                
+                case 11:
+                    diw.textContent = `Listopad`;
+                    break;
+                
+                case 12:
+                    diw.textContent = `Grudzień`;
+                    break;
+                
+                default:
+                    diw.textContent = `NIE MA TAKIEGO MIESIĄCA!`;
+                    break;
+            }
+
+        });
+    
+    </script>
+
+</body>
+</html>
