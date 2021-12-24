@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+    <form action="" method="POST">
+        
+        <input type="number" name="l1" placeholder="Podaj A" />
+        <input type="number" name="l2" placeholder="Podaj B" />
+        
+        <input type="submit" value="Sprawdź" />
+    
+    </form>
+    
+    
+    <div class="wynik"></div>
+    
+    <script>
+        
+        const formularz = document.querySelector('form');
+        const diw = document.querySelector('div.wynik');
+        
+        const suma = function(x, y)
+        {
+            return`Suma liczb ${x} i ${y} wynosi: ${x+y}, a suma podniesiona do trzeciej potegi wynosi: ${(x+y)*(x+y)*(x+y)}`;
+        }
+
+        formularz.addEventListener("submit", (e)=>{
+        e.preventDefault();
+     
+        const l1 = document.querySelector('input[name="l1"]').value*1;
+        const l2 = document.querySelector('input[name="l2"]').value*1;
+
+        diw.textContent=suma(l1, l2);
+
+        });
+    
+    </script>
+
+</body>
+</html>
