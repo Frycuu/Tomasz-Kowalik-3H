@@ -16,8 +16,8 @@
       const divZ = document.querySelector('.zegarek'); 
 
       const dzis = new Date(); 
-      const KoniecRokuSzkolnego = new Date(2022, 1, 15); 
-      let ileDni = KoniecRokuSzkolnego - dzis; 
+      const urodziny = new Date(2022, 1, 15); 
+      let ileDni = urodziny - dzis; 
       const ileMilisekundwDniu = 1000*60*60*24; 
 
       divZ.textContent = Math.ceil(ileDni / ileMilisekundwDniu); 
