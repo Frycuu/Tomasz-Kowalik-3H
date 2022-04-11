@@ -9,6 +9,7 @@
 <body>
     <h2>Wspolrzedne X kursora myszy:</h2>
     <h2>Wspolrzedne Y kursora myszy:</h2>
+    <h2>Naciśnięto klawisz:</h2>
 
     <script>
         //pobieramy jednoczesnie wszystkie h2 
@@ -22,8 +23,13 @@
             //dodajemy do naglowkow odpowiednio zawartosc 
             naglowki[0].textContent = 'Wspolrzedna X kursora myszy: ' + event.clientX;
             naglowki[1].textContent = `Wspolrzedna Y kursora myszy: ${event.clientY}`;
-
         })
+
+        //obsluga zdarzenia wciskania klawiszy 
+        document.addEventListener('keydown', function(e){
+            //do h2 dodajemy zawartosc
+            naglowki[2].textContent = `Naciśnięto klawisz: ${event.key}`; 
+        });
     </script>
     
 </body>
