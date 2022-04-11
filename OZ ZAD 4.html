@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h2>Naciśnięto klawisz:</h2>
+
+    <script>
+        //pobieramy jednoczesnie wszystkie h2 
+        const naglowki = document.querySelectorAll('h2'); 
+
+    
+
+        //obsluga zdarzenia wciskania klawiszy 
+        document.addEventListener('keydown', function(e){
+            //do h2 dodajemy zawartosc
+            naglowki[0].textContent = `Naciśnięto klawisz: ${event.key}`; 
+        });
+    </script>
+    
+</body>
+</html>
