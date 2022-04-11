@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            color: yellow;
+            background-color: blue;
+            padding: 20px; 
+            transition: 0.5s;
+        }
+
+        .zmianaStyli{
+            color: red;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa et harum velit aliquam praesentium impedit rerum ratione, illum voluptas voluptatem, maiores perspiciatis blanditiis similique, tempore consectetur illo sit. Suscipit, saepe!</p>
+    
+    <script>
+        //pobieramy akapit p
+        const akapitZeStrony = document.querySelector('p'); 
+
+        //obslugujemy zdarzenie najechania kursorem
+        akapitZeStrony.addEventListener('mouseover', function(){
+            //zmieniamy kolor tla akapitu 
+            
+
+            //dodajemy do akapitu klase zmianaStyli
+            akapitZeStrony.classList.add('zmianaStyli'); 
+        });
+
+        //obslugujemy zdarzenie najechania kursorem
+        akapitZeStrony.addEventListener('mouseout', function(){
+            //zmieniamy kolor tla akapitu 
+            //dodajemy klase 
+            akapitZeStrony.classList.remove('zmianaStyli')
+
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>
