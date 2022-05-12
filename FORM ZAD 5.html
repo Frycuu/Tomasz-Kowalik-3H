@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label{
+            display: block;
+            width: 150px;
+        }
+
+        div{
+            display: flex;
+            margin: 10px 0; 
+            flex-wrap: wrap;
+        }
+
+        input[type='reset'] {
+            margin-right: 22px;
+        }
+
+        h2, 
+        p{
+            flex-basis: 100%;
+            padding: 0; 
+            margin: 0; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="" method="POST">
+       <div>
+           <label for="imie">Podaj imie:</label>
+           <input type="text" name="imie" id="imie">
+       </div> 
+
+       <div>
+        <label for="nazwisko">Podaj nazwisko:</label>
+        <input type="text" name="nazwisko" id="nazwisko">
+    </div> 
+
+    <div>
+        <label for="telefon">Podaj telefon:</label>
+        <input type="text" name="telefon" id="telefon">
+    </div> 
+
+    <div>
+        <label for="email">Podaj email:</label>
+        <input type="email" name="email" id="email">
+    </div> 
+
+    <div>
+        <input type="reset" value="Wyczysc formularz">
+        <input type="submit" value="Wyslij formularz">
+    </div>
+
+    </form>
+
+    <div class="dane">Tu bedą dane z formularza</div>
+
+
+    <script>
+        //pobieramy elem. HTML
+        const formularz = document.querySelector('form'); 
+
+        const inputImie = document.querySelector('input[name="imie"]'); 
+        const inputNazwisko = document.querySelector('input[name="nazwisko"]'); 
+        const inputTelefon = document.querySelector('input[name="telefon"]'); 
+        const inputEmail = document.querySelector('input[name="email"]'); 
+
+        const div = document.querySelector('div.dane'); 
+
+
+        //obsluga zdarzenia zatwierdzania formularza submit 
+        formularz.addEventListener('submit', function(e){
+            e.preventDefault(); 
+
+            //pobieramy wartosci pol formularza 
+            const imie = inputImie.value; 
+            const nazwisko = inputNazwisko.value; 
+            const telefon = inputTelefon.value; 
+            const email = inputEmail.value; 
+
+
+            //walidacja
+
+            //sprawdzanie czy ktores pole jest puste 
+            if(imie === '' || nazwisko === '' || telefon === '' || email === ''){
+                div.innerHTML = '<h3> Uzupelnij wszystkie pola! </h3>';
+            }
+            else{
+                div.innerHTML = `
+                <h2>Dane z formularza:</h2>
+                <p>Imię: ${imie}</p>
+                <p>Nazwisko: ${nazwisko}</p>
+                <p>Telefon: ${telefon}</p>
+                <p>Email: ${email}</p>
+            `;
+            }
+
+        })
+
+    </script>
+    
+</body>
+</html>
