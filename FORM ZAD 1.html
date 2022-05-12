@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         label{
+            display: block;
+            width: 150px;
+        }
+
+        div{
+            display: flex;
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <form action="" method="POST"></form>
+
+        <h2>Wybierz płeć:</h2>
+
+        <div>
+            <label for="chlop">Chlop</label>
+            <input type="checkbox" name="chlop" id="chlop">
+        </div>
+
+        <div>
+            <label for="baba">Baba</label>
+            <input type="checkbox" name="baba" id="baba">
+        </div>
+
+        <div>
+            <label for="niebinarne">Niebinarne</label>
+            <input type="checkbox" name="niebinarne" id="niebinarne">
+        </div>
+
+        <div>
+            <input type="submit" value="Wyslij dane">
+        </div>
+
+    </form>
+
+    <div class="dane">Dane z formularza:</div>
+
+    <script>
+        const formularz = document.querySelector('form'); 
+
+        const inputChlop = document.querySelector('input[name="chlop"]'); 
+        const inputBaba = document.querySelector('input[name="baba"]'); 
+        const inputNiebinarne = document.querySelector('input[name="niebinarne"]');
+
+        const div = document.querySelector('div.dane'); 
+
+        formularz.addEventListener('submit', function(e){
+            e.preventDefault(); 
+
+            const chlop = inputChlop.value; 
+            const baba = inputBaba.value; 
+            const niebinarne = inputNiebinarne.value; 
+
+                div.innerHTML = `
+                <h2>Wybrano:</h2>
+                <p>${chlop}</p>
+                <p>${baba}</p>
+                <p>${niebinarne}</p>
+            `;
+            
+
+        });
+            
+    </script>
+    
+</body>
+</html>
